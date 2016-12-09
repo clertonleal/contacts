@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.adapter;
 
 
 import android.databinding.DataBindingUtil;
@@ -11,6 +11,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import clertonleal.com.hotmart.model.Message;
+import clertonleal.com.hotmart.R;
+import clertonleal.com.hotmart.adapter.viewHolder.DataBindingViewHolder;
 import clertonleal.com.hotmart.databinding.RowMessageBinding;
 
 public class MessagesAdapter extends RecyclerView.Adapter<DataBindingViewHolder<RowMessageBinding>> {
@@ -18,7 +21,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<DataBindingViewHolder<
     private List<Message> messages = new ArrayList<>();
 
     @Override
-    public DataBindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DataBindingViewHolder<RowMessageBinding> onCreateViewHolder(ViewGroup parent, int viewType) {
         RowMessageBinding rowMessageBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.row_message, parent, false);
         return new DataBindingViewHolder<>(rowMessageBinding);
     }

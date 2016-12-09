@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.view.fragment;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import clertonleal.com.hotmart.viewModel.MessagesViewModel;
+import clertonleal.com.hotmart.R;
 import clertonleal.com.hotmart.databinding.MessagesFragmentBinding;
 
 public class MessagesFragment extends Fragment {

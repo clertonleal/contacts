@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.adapter.viewHolder;
 
 
 import android.databinding.ViewDataBinding;

@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="clertonleal.com.hotmart.MainActivity"
+    tools:context="clertonleal.com.hotmart.view.activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
     <fragment
         android:id="@+id/message_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="clertonleal.com.hotmart.MessagesFragment" />
+        android:name="clertonleal.com.hotmart.view.fragment.MessagesFragment" />
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.dataBinding;
 
 
 import android.databinding.BindingAdapter;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import clertonleal.com.hotmart.R;
 
 public class DataBindingUtils {
 

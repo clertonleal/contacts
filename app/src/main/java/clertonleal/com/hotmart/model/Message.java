@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.model;
 
 import android.support.annotation.DrawableRes;
 
@@ -14,6 +14,11 @@ public class Message {
     public Message(String contactName, String contactImage, int contactColor) {
         this.contactName = contactName;
         this.contactImage = contactImage;
+        this.contactColor = contactColor;
+    }
+
+    public Message(String contactName, int contactColor) {
+        this.contactName = contactName;
         this.contactColor = contactColor;
     }
 

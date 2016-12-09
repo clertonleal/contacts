@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.model;
 
 
 import android.support.annotation.DrawableRes;

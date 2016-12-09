@@ -1,6 +1,10 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.viewModel;
 
 import java.util.List;
+
+import clertonleal.com.hotmart.DataProvider;
+import clertonleal.com.hotmart.adapter.MessagesAdapter;
+import clertonleal.com.hotmart.model.Message;
 
 public class MessagesViewModel {
 
