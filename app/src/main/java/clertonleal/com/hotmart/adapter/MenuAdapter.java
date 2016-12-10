@@ -7,6 +7,7 @@ import clertonleal.com.hotmart.R;
 import clertonleal.com.hotmart.adapter.viewHolder.DataBindingViewHolder;
 import clertonleal.com.hotmart.databinding.RowDrawerMenuBinding;
 import clertonleal.com.hotmart.model.Menu;
+import clertonleal.com.hotmart.viewModel.MenuViewModel;
 
 public class MenuAdapter extends BaseDataBindingAdapter<Menu, RowDrawerMenuBinding> {
 
@@ -18,7 +19,7 @@ public class MenuAdapter extends BaseDataBindingAdapter<Menu, RowDrawerMenuBindi
     @Override
     public void onBindViewHolder(DataBindingViewHolder<RowDrawerMenuBinding> holder, int position) {
         Menu menu = list.get(position);
-        holder.binding.setMenu(menu);
+        holder.binding.setViewModel(new MenuViewModel(menu));
         Context context = holder.binding.background.getContext();
 
         if (menu.isEnabled()) {

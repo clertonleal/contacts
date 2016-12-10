@@ -6,6 +6,7 @@ import clertonleal.com.hotmart.R;
 import clertonleal.com.hotmart.adapter.viewHolder.DataBindingViewHolder;
 import clertonleal.com.hotmart.databinding.RowMessageBinding;
 import clertonleal.com.hotmart.model.Message;
+import clertonleal.com.hotmart.viewModel.MessageViewModel;
 
 public class MessagesAdapter extends BaseDataBindingAdapter<Message, RowMessageBinding> {
 
@@ -17,7 +18,7 @@ public class MessagesAdapter extends BaseDataBindingAdapter<Message, RowMessageB
     @Override
     public void onBindViewHolder(DataBindingViewHolder<RowMessageBinding> holder, int position) {
         Message message = list.get(position);
-        holder.binding.setMessage(message);
+        holder.binding.setViewModel(new MessageViewModel(message));
 
         if (message.getContactImage() == null) {
             holder.binding.profileImage.setImageResource(message.getContactColor());

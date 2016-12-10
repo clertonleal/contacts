@@ -4,10 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
         <variable
-            name="menu"
-            type="clertonleal.com.hotmart.model.Menu"/>
+            name="viewModel"
+            type="clertonleal.com.hotmart.viewModel.MenuViewModel"/>
     </data>
 
     <RelativeLayout
@@ -20,7 +19,7 @@
             android:id="@+id/image_menu"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@{menu.image}"
+            android:src="@{viewModel.menu.image}"
             tools:src="@drawable/ico_minhas_vendas" />
 
         <TextView
@@ -28,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Meus Produtos"
-            app:text="@{menu.name}"
+            app:text="@{viewModel.menu.name}"
             android:textSize="16sp"
             android:fontFamily="sans-serif"
             android:layout_centerInParent="true"
@@ -50,8 +49,8 @@
             android:paddingLeft="10dp"
             android:textSize="16sp"
             android:textColor="@android:color/white"
-            android:visibility="@{menu.count == 0 ? View.GONE : View.VISIBLE}"
-            android:text="@{String.valueOf(menu.count)}"
+            android:visibility="@{viewModel.counterVisibility()}"
+            android:text="@{viewModel.count()}"
             android:fontFamily="sans-serif"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"

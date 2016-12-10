@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
         <variable
-            name="message"
-            type="clertonleal.com.hotmart.model.Message"/>
+            name="viewModel"
+            type="clertonleal.com.hotmart.viewModel.MessageViewModel"/>
     </data>
 
     <RelativeLayout
@@ -34,8 +33,8 @@
                 android:layout_height="wrap_content"
                 android:maxLength="1"
                 tools:text="V"
-                android:text="@{message.contactInitial}"
-                android:visibility="@{message.contactImage == null ? View.VISIBLE : View.INVISIBLE}"
+                android:text="@{viewModel.message.contactInitial}"
+                android:visibility="@{viewModel.initialVisibility()}"
                 android:textSize="60sp"
                 android:textColor="@android:color/white"
                 android:layout_centerInParent="true"/>
@@ -47,7 +46,7 @@
             android:maxWidth="80dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="@{message.contactName}"
+            android:text="@{viewModel.message.contactName}"
             android:fontFamily="sans-serif"
             android:maxLines="2"
             android:layout_below="@+id/circle_container"
