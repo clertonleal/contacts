@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="clertonleal.com.hotmart.MessagesViewModel"/>
+            type="clertonleal.com.hotmart.viewModel.MessagesViewModel"/>
     </data>
 
     <LinearLayout
@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             bind:adapter="@{viewModel.getAdapter()}"
+            bind:listitem="@layout/row_message"
             app:layoutManager="android.support.v7.widget.GridLayoutManager"
             app:spanCount="4"/>
     </LinearLayout>

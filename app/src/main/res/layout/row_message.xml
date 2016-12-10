@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="message"
-            type="clertonleal.com.hotmart.Message"/>
+            type="clertonleal.com.hotmart.model.Message"/>
     </data>
 
     <RelativeLayout
@@ -32,6 +32,7 @@
                 android:id="@+id/text_initial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxLength="1"
                 tools:text="V"
                 android:text="@{message.contactInitial}"
                 android:visibility="@{message.contactImage == null ? View.VISIBLE : View.INVISIBLE}"

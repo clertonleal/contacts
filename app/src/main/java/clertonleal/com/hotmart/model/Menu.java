@@ -6,6 +6,17 @@ import android.support.annotation.StringRes;
 
 public class Menu {
 
+    public Menu(int image, int name) {
+        this.image = image;
+        this.name = name;
+    }
+
+    public Menu(int image, int name, int count) {
+        this.image = image;
+        this.name = name;
+        this.count = count;
+    }
+
     @DrawableRes
     private int image;
 
