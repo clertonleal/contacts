@@ -1,5 +1,7 @@
 package clertonleal.com.hotmart.viewModel;
 
+import android.view.View;
+
 import java.util.List;
 
 import clertonleal.com.hotmart.DataProvider;
@@ -14,6 +16,14 @@ public class MessagesViewModel {
         MessagesAdapter messagesAdapter = new MessagesAdapter();
         messagesAdapter.setList(messages);
         return messagesAdapter;
+    }
+
+    public String counter() {
+        return "+10";
+    }
+
+    public int counterVisibility() {
+        return View.VISIBLE;
     }
 
 }

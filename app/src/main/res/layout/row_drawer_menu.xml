@@ -19,6 +19,8 @@
             android:id="@+id/image_menu"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:src="@{viewModel.menu.image}"
             tools:src="@drawable/ico_minhas_vendas" />
 
@@ -31,8 +33,8 @@
             android:textSize="16sp"
             android:fontFamily="sans-serif"
             android:layout_centerInParent="true"
-            android:layout_marginStart="22dp"
-            android:layout_marginLeft="22dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
             android:textColor="@android:color/black"
             android:layout_toRightOf="@+id/image_menu"
             android:layout_toEndOf="@+id/image_menu"/>

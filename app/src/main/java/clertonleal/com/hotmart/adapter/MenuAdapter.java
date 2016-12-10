@@ -18,6 +18,7 @@ public class MenuAdapter extends BaseDataBindingAdapter<Menu, RowDrawerMenuBindi
 
     @Override
     public void onBindViewHolder(DataBindingViewHolder<RowDrawerMenuBinding> holder, int position) {
+
         Menu menu = list.get(position);
         holder.binding.setViewModel(new MenuViewModel(menu));
         Context context = holder.binding.background.getContext();

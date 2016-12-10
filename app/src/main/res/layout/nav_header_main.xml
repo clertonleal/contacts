@@ -18,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="220dp"
             android:orientation="vertical"
             android:layout_marginBottom="16dp"
             android:background="@drawable/profile_placeholder">
@@ -27,10 +27,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingStart="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="16dp"
                 android:paddingTop="32dp"
                 app:url="@{viewModel.user.photoUrl}"
                 android:src="@drawable/profile_placeholder" />
@@ -39,11 +36,9 @@
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingStart="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingEnd="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/nav_header_vertical_spacing"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:fontFamily="sans-serif"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
@@ -55,10 +50,8 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingStart="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:text="@{viewModel.user.email}"
                 android:textColor="@color/red"
                 bind:text="android.studio@android.com" />

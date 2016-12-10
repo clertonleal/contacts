@@ -3,15 +3,17 @@ package clertonleal.com.hotmart.model;
 
 public class User {
 
-    public User(String name, String email, String photoUrl) {
+    public User(String name, String email, String photoUrl, float balance) {
         this.name = name;
         this.email = email;
         this.photoUrl = photoUrl;
+        this.balance = balance;
     }
 
     private String name;
     private String email;
     private String photoUrl;
+    private float balance;
 
     public String getName() {
         return name;
@@ -35,5 +37,13 @@ public class User {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public float getBalance() {
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 }

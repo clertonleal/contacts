@@ -2,6 +2,8 @@ package clertonleal.com.hotmart.viewModel;
 
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
+import android.databinding.ObservableInt;
+import android.view.View;
 
 import java.util.List;
 
@@ -24,6 +26,8 @@ public class DrawerViewModel {
 
     private List<Menu> menus = DataProvider.getMockMenu();
     private User user = DataProvider.getMockUser();
+    private ObservableInt counterVisibility = new ObservableInt(View.VISIBLE);
+    public ObservableField<String> counterValue = new ObservableField<>("+10");
 
     public MenuAdapter getAdapter() {
         MenuAdapter menuAdapter = new MenuAdapter();
@@ -32,12 +36,7 @@ public class DrawerViewModel {
         return menuAdapter;
     }
 
-    private void openDrawer() {
-        drawerIsOpened.set(true);
-        drawerIsOpened.notifyChange();
-    }
-
-    private void closeDrawer() {
+    public void closeDrawer() {
         drawerIsOpened.set(false);
         drawerIsOpened.notifyChange();
     }
@@ -48,5 +47,26 @@ public class DrawerViewModel {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public ObservableInt getCounterVisibility() {
+        return counterVisibility;
+    }
+
+    public void setCounterVisibility(ObservableInt counterVisibility) {
+        this.counterVisibility = counterVisibility;
+    }
+
+    public void setCounterValue(String counterValue) {
+        this.counterValue.set(counterValue);
+    }
+
+    public void setCounterVisible(boolean counterVisible) {
+        if (counterVisible) {
+            counterVisibility.set(View.VISIBLE);
+        } else {
+            counterVisibility.set(View.GONE);
+        }
+
     }
 }

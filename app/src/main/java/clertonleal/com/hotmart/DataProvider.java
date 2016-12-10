@@ -71,7 +71,7 @@ public class DataProvider {
         menus.add(new Menu(R.drawable.ico_minhas_vendas, R.string.my_sells));
         menus.add(new Menu(R.drawable.ico_meus_produtos, R.string.my_products));
         menus.add(new Menu(R.drawable.ico_afiliados, R.string.affiliates, 121));
-        menus.add(new Menu(R.drawable.ico_mensagens, R.string.messages, 50, false));
+        menus.add(new Menu(R.drawable.ico_mensagens, R.string.messages, 50));
         menus.add(new Menu(R.drawable.ico_notificacoes, R.string.notifications, 15, false));
         menus.add(new Menu(R.drawable.ico_minha_conta, R.string.my_account));
         menus.add(new Menu(R.drawable.ico_sobre_o_app, R.string.about_app));
@@ -79,7 +79,7 @@ public class DataProvider {
     }
 
     public static User getMockUser() {
-        return new User("Clerton Leal", "clertonleal@gmail.com", "https://dl.dropboxusercontent.com/s/q3v4sintbmf7rdg/profile.jpeg?dl=0");
+        return new User("Clerton Leal", "clertonleal@gmail.com", "https://dl.dropboxusercontent.com/s/q3v4sintbmf7rdg/profile.jpeg?dl=0", 2152.23F);
     }
 
     public static List<Sell> getMockSells() {

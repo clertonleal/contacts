@@ -12,4 +12,6 @@
     <string name="notifications">Notifications</string>
     <string name="my_account">Minha Conta</string>
     <string name="about_app">Sobre o App</string>
+    <string name="current_balance">Seu saldo atual é de:</string>
+    <string name="recent_messages">Mensagens recentes</string>
 </resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="profileViewModel"
+            type="clertonleal.com.hotmart.viewModel.ProfileViewModel"/>
+        <variable
+            name="messagesViewModel"
+            type="clertonleal.com.hotmart.viewModel.MessagesViewModel"/>
+        <variable
+            name="sellViewModel"
+            type="clertonleal.com.hotmart.viewModel.SellListViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/my_profile_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:viewModel="@{profileViewModel}"/>
+
+        <include
+            layout="@layout/my_profile_messages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:viewModel="@{messagesViewModel}"/>
+
+        <include
+            layout="@layout/my_sells_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:viewModel="@{sellViewModel}"/>
+
+    </LinearLayout>
+</layout>

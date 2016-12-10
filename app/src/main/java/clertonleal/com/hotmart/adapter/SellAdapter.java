@@ -23,9 +23,9 @@ public class SellAdapter extends BaseDataBindingAdapter<Sell, SellRowBinding> {
 
         Context context = holder.binding.container.getContext();
         if (position % 2 == 0) {
-            holder.binding.container.setBackgroundColor(ContextCompat.getColor(context, android.R.color.white));
-        } else {
             holder.binding.container.setBackgroundColor(ContextCompat.getColor(context, R.color.disabled));
+        } else {
+            holder.binding.container.setBackgroundColor(ContextCompat.getColor(context, android.R.color.white));
         }
     }
 }

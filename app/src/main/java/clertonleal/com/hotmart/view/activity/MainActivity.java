@@ -2,6 +2,7 @@ package clertonleal.com.hotmart.view.activity;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +14,7 @@ import clertonleal.com.hotmart.databinding.ActivityMainBinding;
 import clertonleal.com.hotmart.databinding.NavHeaderMainBinding;
 import clertonleal.com.hotmart.model.Menu;
 import clertonleal.com.hotmart.view.fragment.MessagesFragment;
+import clertonleal.com.hotmart.view.fragment.MyProfileFragment;
 import clertonleal.com.hotmart.view.fragment.MySellsFragment;
 import clertonleal.com.hotmart.viewModel.DrawerViewModel;
 
@@ -32,7 +34,8 @@ public class MainActivity extends BaseActivity implements MainView {
         configureDrawer(binding);
         configureNavigationView(binding, viewModel);
 
-        addFragment(new MessagesFragment());
+        MessagesFragment messagesFragment = new MessagesFragment();
+        addFragment(messagesFragment);
     }
 
     private void configureNavigationView(ActivityMainBinding binding, DrawerViewModel viewModel) {
@@ -56,7 +59,7 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            binding.drawerLayout.closeDrawer(GravityCompat.START);
+            binding.getViewModel().closeDrawer();
         } else {
             super.onBackPressed();
         }
@@ -65,23 +68,15 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void openFragment(Menu menu) {
         if (menu.getName() == R.string.my_account) {
-            if (getFragmentManager().getBackStackEntryCount() == 0) {
-                replaceFragment(new MessagesFragment(), true);
-            } else {
-                getFragmentManager().popBackStack();
-                replaceFragment(new MessagesFragment(), true);
-            }
+            binding.getViewModel().setCounterVisible(false);
+            replaceFragment(new MyProfileFragment());
         } else if (menu.getName() == R.string.my_sells) {
-            if (getFragmentManager().getBackStackEntryCount() == 0) {
-                replaceFragment(new MySellsFragment(), true);
-            } else {
-                getFragmentManager().popBackStack();
-                replaceFragment(new MySellsFragment(), true);
-            }
+            binding.getViewModel().setCounterVisible(false);
+            replaceFragment(new MySellsFragment());
         } else if (menu.getName() == R.string.messages) {
-            if (getFragmentManager().getBackStackEntryCount() != 0) {
-                getFragmentManager().popBackStack();
-            }
+            MessagesFragment messagesFragment = new MessagesFragment();
+            binding.getViewModel().setCounterVisible(true);
+            replaceFragment(messagesFragment);
         }
 
         binding.drawerLayout.closeDrawer(GravityCompat.START);

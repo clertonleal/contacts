@@ -13,11 +13,13 @@ import clertonleal.com.hotmart.viewModel.MessagesViewModel;
 
 public class MessagesFragment extends BaseFragment {
 
+    private MessagesViewModel viewModel;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         MessagesFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.messages_fragment, container, false);
-        MessagesViewModel viewModel = new MessagesViewModel();
+        viewModel = new MessagesViewModel();
         binding.setViewModel(viewModel);
         return  binding.getRoot();
     }
@@ -25,5 +27,13 @@ public class MessagesFragment extends BaseFragment {
     @Override
     protected int getTitle() {
         return R.string.messages;
+    }
+
+    public MessagesViewModel getViewModel() {
+        return viewModel;
+    }
+
+    public void setViewModel(MessagesViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 }

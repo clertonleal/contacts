@@ -35,7 +35,8 @@
                 tools:text="V"
                 android:text="@{viewModel.message.contactInitial}"
                 android:visibility="@{viewModel.initialVisibility()}"
-                android:textSize="60sp"
+                android:textSize="38sp"
+                android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:layout_centerInParent="true"/>
         </RelativeLayout>

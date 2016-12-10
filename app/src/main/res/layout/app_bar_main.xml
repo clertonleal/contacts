@@ -20,12 +20,39 @@
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                <TextView
+                    android:id="@+id/menu_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/counter_shape"
+                    android:padding="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingLeft="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:visibility="@{viewModel.counterVisibility}"
+                    android:text="@{viewModel.counterValue}"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:foregroundGravity="right"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    tools:text="+50"/>
+            </RelativeLayout>
 
         </android.support.design.widget.AppBarLayout>
 
