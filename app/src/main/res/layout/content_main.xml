@@ -9,9 +9,9 @@
     tools:context="clertonleal.com.hotmart.view.activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <fragment
-        android:id="@+id/message_fragment"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="clertonleal.com.hotmart.view.fragment.MessagesFragment" />
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>

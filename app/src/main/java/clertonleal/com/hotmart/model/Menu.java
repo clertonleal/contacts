@@ -11,6 +11,13 @@ public class Menu {
         this.name = name;
     }
 
+    public Menu(int image, int name, int count, boolean enabled) {
+        this.image = image;
+        this.name = name;
+        this.count = count;
+        this.enabled = enabled;
+    }
+
     public Menu(int image, int name, int count) {
         this.image = image;
         this.name = name;
@@ -24,6 +31,8 @@ public class Menu {
     private int name;
 
     private int count;
+
+    private boolean enabled = true;
 
     public int getImage() {
         return image;
@@ -49,4 +58,11 @@ public class Menu {
         this.count = count;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 }

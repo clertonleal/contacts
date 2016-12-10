@@ -8,22 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import clertonleal.com.hotmart.R;
-import clertonleal.com.hotmart.databinding.MessagesFragmentBinding;
-import clertonleal.com.hotmart.viewModel.MessagesViewModel;
+import clertonleal.com.hotmart.databinding.MySellsFragmentBinding;
+import clertonleal.com.hotmart.viewModel.SellListViewModel;
 
-public class MessagesFragment extends BaseFragment {
+
+public class MySellsFragment extends BaseFragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        MessagesFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.messages_fragment, container, false);
-        MessagesViewModel viewModel = new MessagesViewModel();
-        binding.setViewModel(viewModel);
-        return  binding.getRoot();
+        MySellsFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.my_sells_fragment, container, false);
+        binding.setViewModel(new SellListViewModel());
+        return binding.getRoot();
     }
 
     @Override
     protected int getTitle() {
-        return R.string.messages;
+        return R.string.my_sells;
     }
 }

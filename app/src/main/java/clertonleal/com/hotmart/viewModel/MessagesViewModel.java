@@ -12,7 +12,7 @@ public class MessagesViewModel {
 
     public MessagesAdapter getAdapter() {
         MessagesAdapter messagesAdapter = new MessagesAdapter();
-        messagesAdapter.setMessages(messages);
+        messagesAdapter.setList(messages);
         return messagesAdapter;
     }
 

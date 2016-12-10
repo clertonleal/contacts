@@ -9,4 +9,5 @@
     <color name="red">#ce4251</color>
     <color name="blue">#4982c5</color>
     <color name="gray">#919191</color>
+    <color name="disabled">#f4f4f4</color>
 </resources>

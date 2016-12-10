@@ -6,29 +6,33 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import clertonleal.com.hotmart.R;
 import clertonleal.com.hotmart.databinding.ActivityMainBinding;
 import clertonleal.com.hotmart.databinding.NavHeaderMainBinding;
+import clertonleal.com.hotmart.model.Menu;
+import clertonleal.com.hotmart.view.fragment.MessagesFragment;
+import clertonleal.com.hotmart.view.fragment.MySellsFragment;
 import clertonleal.com.hotmart.viewModel.DrawerViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements MainView {
+
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        DrawerViewModel viewModel = new DrawerViewModel();
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        DrawerViewModel viewModel = new DrawerViewModel(this);
         binding.setViewModel(viewModel);
 
         configureActionBar(binding);
         configureDrawer(binding);
         configureNavigationView(binding, viewModel);
+
+        addFragment(new MessagesFragment());
     }
 
     private void configureNavigationView(ActivityMainBinding binding, DrawerViewModel viewModel) {
@@ -51,33 +55,35 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void openFragment(Menu menu) {
+        if (menu.getName() == R.string.my_account) {
+            if (getFragmentManager().getBackStackEntryCount() == 0) {
+                replaceFragment(new MessagesFragment(), true);
+            } else {
+                getFragmentManager().popBackStack();
+                replaceFragment(new MessagesFragment(), true);
+            }
+        } else if (menu.getName() == R.string.my_sells) {
+            if (getFragmentManager().getBackStackEntryCount() == 0) {
+                replaceFragment(new MySellsFragment(), true);
+            } else {
+                getFragmentManager().popBackStack();
+                replaceFragment(new MySellsFragment(), true);
+            }
+        } else if (menu.getName() == R.string.messages) {
+            if (getFragmentManager().getBackStackEntryCount() != 0) {
+                getFragmentManager().popBackStack();
+            }
         }
 
-        return super.onOptionsItemSelected(item);
+        binding.drawerLayout.closeDrawer(GravityCompat.START);
     }
 }
