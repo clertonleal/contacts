@@ -10,18 +10,24 @@
             type="clertonleal.com.hotmart.viewModel.DrawerViewModel"/>
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@android:color/white">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:urlBlur="@{viewModel.user.photoUrl}"
+            android:src="@drawable/profile_placeholder"
+            android:scaleType="centerCrop"/>
+
         <LinearLayout
+            android:id="@+id/header_container"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:orientation="vertical"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/profile_placeholder">
+            android:layout_marginBottom="16dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView"
@@ -58,11 +64,12 @@
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:layout_below="@+id/header_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             bind:adapter="@{viewModel.getAdapter()}"
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"
             bind:listitem="@layout/row_drawer_menu" />
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>
