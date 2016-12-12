@@ -4,6 +4,8 @@ package clertonleal.com.hotmart.model;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 
+import com.google.common.base.Objects;
+
 public class Menu {
 
     public Menu(int image, int name) {
@@ -64,5 +66,21 @@ public class Menu {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Menu)) return false;
+        Menu menu = (Menu) o;
+        return image == menu.image &&
+                name == menu.name &&
+                count == menu.count &&
+                enabled == menu.enabled;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(image, name, count, enabled);
     }
 }

@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart.view.activity;
+package clertonleal.com.hotmart.view.activity.interfaces;
 
 
 import android.support.annotation.StringRes;

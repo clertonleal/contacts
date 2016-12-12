@@ -8,10 +8,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 
+import clertonleal.com.hotmart.DataProvider;
 import clertonleal.com.hotmart.R;
+import clertonleal.com.hotmart.adapter.MenuAdapter;
 import clertonleal.com.hotmart.databinding.ActivityMainBinding;
 import clertonleal.com.hotmart.databinding.NavHeaderMainBinding;
 import clertonleal.com.hotmart.model.Menu;
+import clertonleal.com.hotmart.view.activity.interfaces.MainView;
 import clertonleal.com.hotmart.view.fragment.MessagesFragment;
 import clertonleal.com.hotmart.view.fragment.MyProfileFragment;
 import clertonleal.com.hotmart.view.fragment.MySellsFragment;
@@ -26,7 +29,7 @@ public class MainActivity extends BaseActivity implements MainView {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        DrawerViewModel viewModel = new DrawerViewModel(this);
+        DrawerViewModel viewModel = new DrawerViewModel(this, new MenuAdapter(),DataProvider.getMockMenu(), DataProvider.getMockUser());
         binding.setViewModel(viewModel);
 
         configureActionBar(binding);

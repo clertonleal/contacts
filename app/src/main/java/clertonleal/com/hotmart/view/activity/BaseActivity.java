@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import clertonleal.com.hotmart.R;
+import clertonleal.com.hotmart.view.activity.interfaces.BaseView;
 
 public class BaseActivity extends AppCompatActivity implements BaseView {
 

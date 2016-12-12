@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart;
+package clertonleal.com.hotmart.databinding;
 
 import android.databinding.BindingAdapter;
 import android.graphics.Bitmap;
@@ -18,6 +18,7 @@ import com.squareup.picasso.Target;
 
 import net.qiujuer.genius.blur.StackBlur;
 
+import clertonleal.com.hotmart.R;
 import jp.wasabeef.blurry.Blurry;
 
 public class DataBindingUtils {

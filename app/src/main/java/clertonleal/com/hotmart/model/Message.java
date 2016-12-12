@@ -2,6 +2,8 @@ package clertonleal.com.hotmart.model;
 
 import android.support.annotation.DrawableRes;
 
+import com.google.common.base.Objects;
+
 public class Message {
 
     private String contactName;
@@ -51,5 +53,20 @@ public class Message {
 
     public void setContactColor(int contactColor) {
         this.contactColor = contactColor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Message)) return false;
+        Message message = (Message) o;
+        return contactColor == message.contactColor &&
+                Objects.equal(contactName, message.contactName) &&
+                Objects.equal(contactImage, message.contactImage);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(contactName, contactImage, contactColor);
     }
 }

@@ -4,7 +4,7 @@ package clertonleal.com.hotmart.view.fragment;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
-import clertonleal.com.hotmart.view.activity.MainView;
+import clertonleal.com.hotmart.view.activity.interfaces.MainView;
 
 public abstract class BaseFragment extends Fragment {
 

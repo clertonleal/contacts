@@ -1,4 +1,4 @@
-package clertonleal.com.hotmart.view.activity;
+package clertonleal.com.hotmart.view.activity.interfaces;
 
 
 import clertonleal.com.hotmart.model.Menu;

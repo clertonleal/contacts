@@ -1,5 +1,7 @@
 package clertonleal.com.hotmart.model;
 
+import com.google.common.base.Objects;
+
 import java.util.Date;
 
 public class Sell {
@@ -71,5 +73,22 @@ public class Sell {
 
     public void setAlert(boolean alert) {
         this.alert = alert;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Sell)) return false;
+        Sell sell = (Sell) o;
+        return alert == sell.alert &&
+                Objects.equal(title, sell.title) &&
+                Objects.equal(id, sell.id) &&
+                Objects.equal(date, sell.date) &&
+                Objects.equal(value, sell.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(title, id, date, value, alert);
     }
 }
