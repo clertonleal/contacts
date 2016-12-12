@@ -1,9 +1,14 @@
 package clertonleal.com.hotmart;
 
 
+import android.util.Log;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import clertonleal.com.hotmart.model.Menu;
 import clertonleal.com.hotmart.model.Message;
@@ -83,19 +88,33 @@ public class DataProvider {
     }
 
     public static List<Sell> getMockSells() {
+        Date date = getDate();
+
         List<Sell> sells = new ArrayList<>();
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F, true));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F, true));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
-        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, new Date(), 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F, true));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F, true));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
+        sells.add(new Sell("Como Decorar uma festa infantal maravilhosa e simples de fazer", 30294080L, date, 1035F));
         return sells;
+    }
+
+    private static Date getDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+        Date date = new Date();
+        try {
+            date = simpleDateFormat.parse("12/12/2016");
+        } catch (ParseException e) {
+            Log.e("getMockSells", e.getMessage(), e);
+        }
+        
+        return date;
     }
 }

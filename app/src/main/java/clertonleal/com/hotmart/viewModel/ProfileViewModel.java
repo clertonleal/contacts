@@ -9,7 +9,11 @@ import clertonleal.com.hotmart.model.User;
 
 public class ProfileViewModel {
 
-    private User user = DataProvider.getMockUser();
+    private User user;
+
+    public ProfileViewModel(User user) {
+        this.user = user;
+    }
 
     public User getUser() {
         return user;

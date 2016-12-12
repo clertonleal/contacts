@@ -10,10 +10,15 @@ import clertonleal.com.hotmart.model.Message;
 
 public class MessagesViewModel {
 
-    private List<Message> messages = DataProvider.getMockMessages();
+    private MessagesAdapter messagesAdapter;
+    private List<Message> messages;
+
+    public MessagesViewModel(List<Message> messages, MessagesAdapter messagesAdapter) {
+        this.messages = messages;
+        this.messagesAdapter = messagesAdapter;
+    }
 
     public MessagesAdapter getAdapter() {
-        MessagesAdapter messagesAdapter = new MessagesAdapter();
         messagesAdapter.setList(messages);
         return messagesAdapter;
     }

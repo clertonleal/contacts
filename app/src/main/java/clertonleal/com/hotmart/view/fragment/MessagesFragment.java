@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import clertonleal.com.hotmart.DataProvider;
 import clertonleal.com.hotmart.R;
+import clertonleal.com.hotmart.adapter.MessagesAdapter;
 import clertonleal.com.hotmart.databinding.MessagesFragmentBinding;
 import clertonleal.com.hotmart.viewModel.MessagesViewModel;
 
@@ -19,7 +21,7 @@ public class MessagesFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         MessagesFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.messages_fragment, container, false);
-        viewModel = new MessagesViewModel();
+        viewModel = new MessagesViewModel(DataProvider.getMockMessages(), new MessagesAdapter());
         binding.setViewModel(viewModel);
         return  binding.getRoot();
     }
