@@ -20,6 +20,11 @@ public class SellAdapter extends BaseDataBindingAdapter<Sell, SellRowBinding> {
     @Override
     public void onBindViewHolder(DataBindingViewHolder<SellRowBinding> holder, int position) {
         holder.binding.setViewModel(new SellViewModel(list.get(position)));
+        holder.binding.title.setTag(String.valueOf(position));
+        holder.binding.id.setTag(String.valueOf(position));
+        holder.binding.date.setTag(String.valueOf(position));
+        holder.binding.value.setTag(String.valueOf(position));
+        holder.binding.alarm.setTag(String.valueOf(position));
 
         Context context = holder.binding.container.getContext();
         if (position % 2 == 0) {

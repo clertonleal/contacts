@@ -19,6 +19,8 @@ public class MessagesAdapter extends BaseDataBindingAdapter<Message, RowMessageB
     public void onBindViewHolder(DataBindingViewHolder<RowMessageBinding> holder, int position) {
         Message message = list.get(position);
         holder.binding.setViewModel(new MessageViewModel(message));
+        holder.binding.textInitial.setTag(String.valueOf(position));
+        holder.binding.profileImage.setTag(String.valueOf(position));
 
         if (message.getContactImage() == null) {
             holder.binding.profileImage.setImageResource(message.getContactColor());
