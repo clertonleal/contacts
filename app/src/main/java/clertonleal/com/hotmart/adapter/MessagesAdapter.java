@@ -26,7 +26,7 @@ public class MessagesAdapter extends BaseDataBindingAdapter<Message, RowMessageB
             holder.binding.profileImage.setImageResource(message.getContactColor());
         } else {
             Picasso.with(holder.binding.profileImage.getContext()).load(message.getContactImage()).
-                    error(R.drawable.profile_placeholder).
+            placeholder(R.drawable.profile_placeholder).error(R.drawable.profile_placeholder).
                     into(holder.binding.profileImage);
         }
     }

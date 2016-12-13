@@ -84,7 +84,7 @@ public class DataProvider {
     }
 
     public static User getMockUser() {
-        return new User("Clerton Leal", "clertonleal@gmail.com", "https://dl.dropboxusercontent.com/s/q3v4sintbmf7rdg/profile.jpeg?dl=0", 2152.23F);
+        return new User("Clerton Leal", "clertonleal@gmail.com", "https://s30.postimg.org/tvexwbmw1/profile.jpg", 2152.23F);
     }
 
     public static List<Sell> getMockSells() {
